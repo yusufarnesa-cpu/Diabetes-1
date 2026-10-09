@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DM Tipe 1 — Interactive Medical Study Companion</title>
+<style>
+:root{--bg:#f4f7fb;--panel:#fff;--ink:#17243a;--muted:#63718a;--line:#dfe7f0;--accent:#176b87;--accent2:#2f9b91;--soft:#e8f4f7;--warn:#fff4dc;--danger:#fff0ef;--good:#e9f8ef;--shadow:0 8px 28px rgba(25,48,76,.07)}
+[data-theme="dark"]{--bg:#101824;--panel:#172333;--ink:#e8eff8;--muted:#a7b6ca;--line:#2b3b50;--accent:#73c8df;--accent2:#6bd0b7;--soft:#1e3946;--warn:#40351f;--danger:#402626;--good:#1d3b30;--shadow:0 8px 28px rgba(0,0,0,.18)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--panel) 92%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.topinner{max-width:1180px;margin:auto;padding:10px 18px;display:flex;align-items:center;gap:12px}.brand{font-weight:800;letter-spacing:.01em;white-space:nowrap}.brand span{color:var(--accent)}.grow{flex:1}.iconbtn,.navlink,.primary,.ghost{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:8px 11px}.iconbtn{min-width:40px}.progresswrap{height:3px;background:var(--line)}#progressbar{height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .2s}.layout{max-width:1180px;margin:auto;padding:24px 18px;display:grid;grid-template-columns:235px minmax(0,1fr);gap:24px}.sidebar{position:sticky;top:74px;align-self:start;max-height:calc(100vh - 95px);overflow:auto}.sidecard,.card,.hero,.quizcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.sidecard{padding:14px}.sidehead{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:800;margin:4px 8px 10px}.navlink{display:block;width:100%;text-align:left;border:0;background:transparent;padding:8px 10px;margin:2px 0;text-decoration:none;color:var(--muted);font-size:13px}.navlink:hover,.navlink.active{background:var(--soft);color:var(--accent);font-weight:700}.mini-progress{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin:8px 0}.mini-progress span{display:block;height:100%;width:0;background:var(--accent2)}main{min-width:0}.hero{padding:28px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--panel),var(--soft))}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--accent)}h1{font-size:clamp(30px,5vw,48px);line-height:1.08;margin:9px 0 12px;letter-spacing:-.04em}h2{font-size:25px;line-height:1.2;letter-spacing:-.025em;margin:0 0 14px}h3{font-size:17px;margin:0 0 8px}p{margin:7px 0 12px}.muted{color:var(--muted)}.hero p{max-width:680px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.chip,.badge{display:inline-flex;align-items:center;gap:5px;border-radius:99px;padding:4px 9px;font-size:12px;font-weight:750;background:var(--soft);color:var(--accent)}.badge.warn{background:var(--warn);color:#9a6810}.badge.danger{background:var(--danger);color:#b74740}.badge.green{background:var(--good);color:#21804b}.herofoot{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:18px}.primary{background:var(--accent);color:white;border-color:var(--accent);font-weight:750}.ghost{font-weight:650}.section{margin-top:24px;scroll-margin-top:88px}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 2px 12px}.sectionhead p{margin:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:18px;min-width:0}.card p:last-child{margin-bottom:0}.callout{border-left:4px solid var(--accent);background:var(--soft);border-radius:0 12px 12px 0;padding:13px 15px;margin:12px 0}.callout.warn{border-color:#d69b2d;background:var(--warn)}.callout.danger{border-color:#d85b52;background:var(--danger)}.callout.good{border-color:#31966a;background:var(--good)}.list{padding-left:20px;margin:8px 0}.list li{margin:5px 0}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:13px;margin:12px 0}table{border-collapse:collapse;width:100%;min-width:520px;background:var(--panel)}th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--soft)}tr:last-child td{border-bottom:0}.flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin:12px 0}.flow .step{flex:1;min-width:125px;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}.arrow{align-self:center;color:var(--accent);font-weight:900}.details{border:1px solid var(--line);border-radius:13px;background:var(--panel);margin:10px 0;overflow:hidden}.details summary{padding:13px 15px;cursor:pointer;font-weight:750;list-style:none}.details summary:after{content:"＋";float:right;color:var(--accent)}.details[open] summary:after{content:"−"}.detailbody{padding:0 15px 15px}.checklist label{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);cursor:pointer}.checklist label:last-child{border-bottom:0}.checklist input{margin-top:6px;accent-color:var(--accent)}.searchbox{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);margin:5px 0 10px}.quizcard{padding:19px;margin:12px 0}.qmeta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.options{display:grid;gap:8px;margin:13px 0}.option{display:flex;gap:10px;align-items:flex-start;text-align:left;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:11px 13px;border-radius:12px;width:100%}.option:hover{border-color:var(--accent)}.option.selected{border-color:var(--accent);background:var(--soft)}.option.correct{border-color:#31966a;background:var(--good)}.option.incorrect{border-color:#d85b52;background:var(--danger)}.letter{font-weight:850;color:var(--accent);min-width:22px}.feedback{padding:14px;border-radius:12px;background:var(--soft);margin-top:12px}.feedback[hidden]{display:none}.quizcontrols{display:flex;gap:9px;flex-wrap:wrap}.statrow{display:flex;gap:10px;flex-wrap:wrap}.stat{padding:12px 14px;border:1px solid var(--line);border-radius:12px;min-width:115px;background:var(--panel)}.stat strong{display:block;font-size:22px}.small{font-size:12px}.footer{margin:28px 0 12px;padding:18px;text-align:center;color:var(--muted);font-size:12px}.backtop{position:fixed;bottom:18px;right:18px;z-index:15;display:none;border-radius:50%;width:45px;height:45px;box-shadow:var(--shadow)}.backtop.show{display:block}.hidden{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr;padding:14px 12px}.sidebar{position:relative;top:auto;max-height:none}.sidecard{padding:10px}.navlist{display:flex;overflow:auto;gap:4px}.navlink{white-space:nowrap;width:auto;flex:0 0 auto}.sidehead,.mini-progress,.progresslabel{display:none}.grid.three{grid-template-columns:1fr 1fr}.hero{padding:22px}.topinner{padding:8px 12px}.brand{font-size:14px}.hide-mobile{display:none}}
+@media(max-width:540px){.grid,.grid.three{grid-template-columns:1fr}.hero{padding:19px}.card{padding:15px}h2{font-size:22px}.sectionhead{align-items:start;flex-direction:column}.flow .step{min-width:100%;}.arrow{transform:rotate(90deg);width:100%;text-align:center}.stat{flex:1;min-width:90px}}
+@media print{.topbar,.sidebar,.backtop,.quizcontrols,.searchbox{display:none!important}.layout{display:block;padding:0}.hero,.card,.quizcard{box-shadow:none;break-inside:avoid}.details .detailbody{display:block!important}body{background:#fff;color:#111}}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="topinner"><div class="brand">MED<span>•</span>COMPANION <span class="hide-mobile">/ ENDOCRINE</span></div><div class="grow"></div><button class="iconbtn" id="themeBtn" aria-label="Ganti tema" title="Dark/light mode">☾</button><button class="iconbtn" id="printBtn" title="Cetak / simpan PDF">⤓</button></div>
+ <div class="progresswrap"><div id="progressbar"></div></div>
+</header>
+<div class="layout">
+<aside class="sidebar">
+ <div class="sidecard">
+  <div class="sidehead">Navigate your study</div>
+  <input id="search" class="searchbox" type="search" placeholder="Cari konsep… (mis. KAD)" aria-label="Cari materi">
+  <nav class="navlist" id="nav">
+   <a class="navlink active" href="#overview">Overview</a><a class="navlink" href="#objectives">Learning objectives</a><a class="navlink" href="#priority">Study priority</a><a class="navlink" href="#core">Core theory</a><a class="navlink" href="#diagnosis">Diagnosis</a><a class="navlink" href="#kad">KAD</a><a class="navlink" href="#management">Tatalaksana</a><a class="navlink" href="#complications">Komplikasi</a><a class="navlink" href="#recall">Active recall</a><a class="navlink" href="#quiz">Mini quiz</a><a class="navlink" href="#quick">5-minute review</a>
+  </nav>
+  <div class="progresslabel small muted">Progress belajar</div><div class="mini-progress"><span id="miniBar"></span></div><div class="small muted"><span id="doneCount">0</span> dari <span id="totalCount">6</span> bagian ditandai selesai</div>
+ </div>
+</aside>
+<main>
+<section class="hero" id="overview" data-search="overview diabetes melitus tipe 1">
+ <div class="eyebrow">Interactive Medical Study Companion · Blok Endokrin</div>
+ <h1>Diabetes Melitus<br>Tipe 1</h1>
+ <p class="muted">Belajar konsep inti, diagnosis, ketoasidosis diabetikum, dan prinsip tata laksana melalui alur yang terstruktur—berdasarkan materi kuliah yang diberikan.</p>
+ <div class="chips"><span class="chip">🔥 High-yield</span><span class="chip">🧠 Conceptual learning</span><span class="chip">🩺 Clinical reasoning</span><span class="chip">📝 Exam practice</span></div>
+ <div class="callout warn"><strong>Catatan sumber:</strong> Ringkasan ini merujuk pada PPT “DM tipe 1” (38 halaman). Dosis dan tata laksana pada slide merupakan contoh/konteks kasus dalam materi, bukan resep individual. Dalam praktik, ikuti protokol pediatrik terbaru dan supervisi klinis.</div>
+ <div class="herofoot"><button class="primary" onclick="document.querySelector('#core').scrollIntoView()">Mulai belajar ↓</button><span class="small muted">Estimasi belajar: 15–25 menit</span></div>
+</section>
+
+<section class="section" id="objectives" data-search="tujuan pembelajaran capaian kompetensi SKD 2026">
+ <div class="sectionhead"><div><div class="eyebrow">01 · Orientasi</div><h2>Learning objectives</h2></div><span class="badge">Checklist</span></div>
+ <div class="card checklist" id="objectiveList">
+  <label><input type="checkbox" data-progress> Menjelaskan peran pankreas endokrin dan fungsi insulin.</label>
+  <label><input type="checkbox" data-progress> Menghubungkan defisiensi insulin dengan hiperglikemia, ketosis, dan asidosis.</label>
+  <label><input type="checkbox" data-progress> Mengenali gejala klasik dan kriteria diagnosis DM.</label>
+  <label><input type="checkbox" data-progress> Mengidentifikasi gambaran klinis dan kriteria KAD dari data pasien.</label>
+  <label><input type="checkbox" data-progress> Menyebutkan lima pilar tata laksana DM tipe 1.</label>
+  <label><input type="checkbox" data-progress> Membedakan prinsip penanganan hipoglikemia ringan dan berat menurut materi.</label>
+ </div>
+ <p class="small muted">Capaian yang tertulis di PPT (SKD 2026): DM tipe 1 tanpa komplikasi dan hipoglikemia ringan — “tuntas”; KAD dan hipoglikemia berat — “tatalaksana awal dan rujuk”.</p>
+</section>
+
+<section class="section" id="priority" data-search="high yield prioritas ujian jebakan">
+ <div class="sectionhead"><div><div class="eyebrow">02 · Prioritas</div><h2>Study priority</h2></div></div>
+ <div class="grid three">
+  <article class="card"><span class="badge danger">🔥 HIGH YIELD</span><h3>Gejala klasik</h3><p>Poliuria, polidipsia, polifagia, dan penurunan berat badan.</p></article>
+  <article class="card"><span class="badge">🧠 MUST MEMORIZE</span><h3>Kriteria diagnosis</h3><p>Ambang glukosa dan kriteria asidosis/keton pada KAD.</p></article>
+  <article class="card"><span class="badge warn">⚠️ COMMON TRAP</span><h3>Jangan tertukar</h3><p>Hiperglikemia saja tidak menjelaskan seluruh KAD: nilai pH/bikarbonat dan keton juga penting.</p></article>
+  <article class="card"><span class="badge danger">🔥 HIGH YIELD</span><h3>Defisiensi insulin</h3><p>Memicu produksi glukosa hati serta pemecahan lemak dan pembentukan keton.</p></article>
+  <article class="card"><span class="badge">🩺 CLINICAL PEARL</span><h3>Tanda KAD</h3><p>Dehidrasi, mual/muntah, perubahan kesadaran, dan napas Kussmaul.</p></article>
+  <article class="card"><span class="badge">👨‍🏫 DOSEN</span><h3>Pengelolaan jangka panjang</h3><p>Insulin, pengaturan makan, olahraga, pemantauan mandiri, dan edukasi.</p><p class="small muted">Label ini merujuk pada topik yang dibahas di slide, bukan penekanan verbal dosen yang tidak tersedia.</p></article>
+ </div>
+</section>
+
+<section class="section" id="core" data-search="pankreas insulin sel beta alfa delta patogenesis autoantibodi">
+ <div class="sectionhead"><div><div class="eyebrow">03 · Core theory</div><h2>Konsep inti</h2></div></div>
+ <div class="grid">
+  <article class="card"><h3>Pankreas: eksokrin vs endokrin</h3><ul class="list"><li><strong>Eksokrin:</strong> enzim dan ion ke lumen duodenum untuk pencernaan.</li><li><strong>Endokrin:</strong> pulau Langerhans.</li><li><strong>Sel β:</strong> insulin; <strong>sel α:</strong> glukagon; <strong>sel δ:</strong> somatostatin; <strong>sel F:</strong> polipeptida pankreas.</li></ul></article>
+  <article class="card"><h3>Apa yang dilakukan insulin?</h3><ul class="list"><li>Meningkatkan ambilan glukosa dan sintesis glikogen di hati/otot.</li><li>Menghambat glukoneogenesis hati.</li><li>Meningkatkan penyimpanan energi serta sintesis protein.</li><li>Meningkatkan lipogenesis dan menghambat lipolisis.</li></ul></article>
+ </div>
+ <div class="callout"><strong>Inti konsep:</strong> tanpa insulin, jaringan perifer tidak menggunakan glukosa secara normal; tubuh berperilaku seperti keadaan puasa. Glikogenolisis dan glukoneogenesis hati meningkatkan glukosa darah.</div>
+ <h3 style="margin-top:18px">Patogenesis DM tipe 1</h3>
+ <div class="flow"><div class="step"><strong>Kerusakan sel β</strong><br><span class="small">Autoimun atau idiopatik</span></div><div class="arrow">→</div><div class="step"><strong>Insulin menurun</strong><br><span class="small">Produksi berkurang/terhenti</span></div><div class="arrow">→</div><div class="step"><strong>Gangguan metabolisme</strong><br><span class="small">Karbohidrat, lemak, protein</span></div><div class="arrow">→</div><div class="step"><strong>Hiperglikemia ± ketosis</strong><br><span class="small">Risiko KAD</span></div></div>
+ <details class="details"><summary>Autoantibodi terkait DM tipe 1</summary><div class="detailbody"><ul class="list"><li>GAD65 — glutamic acid decarboxylase 65 autoantibodies.</li><li>IA-2 — tyrosine phosphatase-like insulinoma antigen 2.</li><li>IAA — insulin autoantibodies.</li><li>ZnT8 — zinc transporter 8 autoantibodies.</li></ul><p class="small muted">Daftar ini mengikuti istilah yang tercantum dalam PPT.</p></div></details>
+ <details class="details"><summary>Manifestasi klinis yang perlu dikenali</summary><div class="detailbody"><ul class="list"><li>Poliuria, polidipsia, polifagia.</li><li>Penurunan berat badan yang cepat.</li><li>Iritabilitas atau penurunan prestasi sekolah.</li><li>Lebih rentan infeksi; PPT menyebut infeksi saluran napas, kemih, dan kulit.</li><li>Diagnosis terlambat dapat disertai KAD.</li></ul></div></details>
+</section>
+
+<section class="section" id="diagnosis" data-search="diagnosis glukosa puasa postprandial HbA1c">
+ <div class="sectionhead"><div><div class="eyebrow">04 · Diagnosis</div><h2>Kriteria diagnosis DM</h2></div><span class="badge">Hafalkan ambang</span></div>
+ <div class="tablewrap"><table><thead><tr><th>Kriteria dalam PPT</th><th>Ambang</th><th>Catatan</th></tr></thead><tbody>
+ <tr><td>Gejala klasik atau krisis hiperglikemik</td><td>Glukosa plasma ≥200 mg/dL</td><td>11,1 mmol/L</td></tr>
+ <tr><td>Glukosa plasma puasa</td><td>≥126 mg/dL</td><td>7,0 mmol/L</td></tr>
+ <tr><td>Glukosa 2 jam setelah TTGO</td><td>≥200 mg/dL</td><td>Beban glukosa sesuai materi: 75 g atau 1,75 g/kg (maksimum 75 g)</td></tr>
+ <tr><td>HbA1c</td><td>≥6,5%</td><td>PPT menuliskan “&gt; 6,5%”; ambang umum yang lazim dipakai adalah ≥6,5%. Ikuti pedoman/soal yang ditetapkan pengajar.</td></tr>
+ </tbody></table></div>
+ <div class="callout warn"><strong>Common trap:</strong> pada soal, perhatikan apakah pasien bergejala/krisis dan jenis pemeriksaan glukosa yang diberikan. Jangan mencampur ambang glukosa puasa dengan glukosa sewaktu atau TTGO.</div>
+ <details class="details"><summary>Contoh interpretasi data kasus pada PPT</summary><div class="detailbody"><p>Kasus anak 8 tahun: riwayat penurunan berat badan, sering lapar dan sering BAK; GDS sebelumnya 350 mg/dL. Pada hasil lab yang ditampilkan: GDS 242 mg/dL, keton darah 6,1 mmol/L, pH 7,255, HCO₃ 4,7 mmol/L, kalium 3,0 mmol/L.</p><p><strong>Penalaran:</strong> hiperglikemia + ketonemia + asidosis metabolik sangat mendukung KAD. Kalium rendah adalah temuan penting yang harus diperhatikan saat penatalaksanaan.</p></div></details>
+</section>
+
+<section class="section" id="kad" data-search="KAD ketoasidosis diabetikum pH bikarbonat keton dehidrasi kussmaul">
+ <div class="sectionhead"><div><div class="eyebrow">05 · Clinical reasoning</div><h2>Ketoasidosis diabetikum (KAD)</h2></div><span class="badge danger">Urgensi klinis</span></div>
+ <div class="grid">
+  <article class="card"><h3>Manifestasi klinis</h3><ul class="list"><li>Gejala klasik DM dan penurunan berat badan.</li><li>Dehidrasi dengan derajat bervariasi.</li><li>Mual, muntah, nyeri perut.</li><li>Takikardia, hipotensi, turgor kulit menurun hingga syok.</li><li>Perubahan kesadaran.</li><li>Pola napas Kussmaul.</li></ul></article>
+  <article class="card"><h3>Kriteria KAD pada PPT</h3><ul class="list"><li>Glukosa darah &gt;200 mg/dL.</li><li>Asidosis: pH &lt;7,3 dan/atau HCO₃⁻ &lt;15 mEq/L.</li><li>Ketonemia dan/atau ketonuria.</li></ul><p class="small muted">Kriteria dan klasifikasi di bawah disajikan sebagaimana tertulis di materi kuliah.</p></article>
+ </div>
+ <h3 style="margin-top:16px">Klasifikasi keparahan pada slide</h3>
+ <div class="tablewrap"><table><thead><tr><th>Kategori</th><th>Kriteria yang dicantumkan</th></tr></thead><tbody><tr><td>KAD ringan</td><td>pH &lt;7,3 atau HCO₃⁻ &lt;15 mEq/L</td></tr><tr><td>KAD sedang</td><td>pH &lt;7,2 atau HCO₃⁻ &lt;10 mEq/L</td></tr><tr><td>KAD berat</td><td>pH &lt;7,1 atau HCO₃⁻ &lt;5 mEq/L</td></tr></tbody></table></div>
+ <div class="callout danger"><strong>Safety note:</strong> klasifikasi dan protokol KAD dapat berbeda antar pedoman. Pada pasien nyata, KAD merupakan kegawatdaruratan yang memerlukan penilaian segera, monitoring ketat, dan tata laksana sesuai protokol pediatrik lokal; jangan menggunakan angka terapi dari ringkasan ini sebagai instruksi mandiri.</div>
+ <h3>Alur penalaran kasus</h3>
+ <div class="flow"><div class="step">Gejala klasik DM<br><span class="small">poliuria, polidipsia, BB turun</span></div><div class="arrow">→</div><div class="step">Glukosa meningkat<br><span class="small">hiperglikemia</span></div><div class="arrow">→</div><div class="step">Keton + asidosis<br><span class="small">pH/HCO₃ turun</span></div><div class="arrow">→</div><div class="step">Nilai keparahan & stabilitas<br><span class="small">hidrasi, kesadaran, elektrolit</span></div></div>
+</section>
+
+<section class="section" id="management" data-search="tatalaksana insulin basal bolus makanan olahraga edukasi pemantauan">
+ <div class="sectionhead"><div><div class="eyebrow">06 · Management</div><h2>Tata laksana DM tipe 1</h2></div></div>
+ <div class="grid">
+  <article class="card"><h3>Lima pilar</h3><ol class="list"><li>Insulin</li><li>Pengaturan makan</li><li>Olahraga</li><li>Pemantauan mandiri (glukosa dan insulin)</li><li>Edukasi berkelanjutan, bertahap</li></ol></article>
+  <article class="card"><h3>Insulin: konsep basal-bolus</h3><ul class="list"><li><strong>Basal:</strong> kebutuhan insulin latar belakang.</li><li><strong>Bolus:</strong> berkaitan dengan makan dan koreksi sesuai rencana terapi.</li><li>Rasio insulin-karbohidrat membantu menyesuaikan bolus dengan asupan karbohidrat.</li></ul><p class="small muted">Contoh dosis dalam slide bersifat spesifik untuk contoh kasus; kebutuhan individual harus ditentukan tim klinis.</p></article>
+  <article class="card"><h3>Pengaturan makan</h3><ul class="list"><li>Hitung total asupan karbohidrat (carbohydrate counting).</li><li>Materi membahas indeks glikemik dan beban glikemik.</li><li>PPT memberikan contoh distribusi energi harian karbohidrat 50%, lemak 30%, protein 20%—bukan aturan universal untuk semua pasien.</li></ul></article>
+  <article class="card"><h3>Olahraga dan karbohidrat</h3><ul class="list"><li>Aktivitas fisik perlu diselaraskan dengan asupan karbohidrat dan dosis insulin.</li><li>Materi menyebut suplementasi karbohidrat 15–30 g pada olahraga &gt;30 menit dan situasi tertentu.</li><li>Keputusan aktual bergantung pada glukosa sebelum aktivitas, intensitas, durasi, dan rencana individual.</li></ul></article>
+ </div>
+ <details class="details"><summary>Contoh perhitungan yang terdapat di PPT</summary><div class="detailbody"><p>Slide contoh menghitung kebutuhan karbohidrat dari energi harian: 50% energi dari karbohidrat, dengan 4 kkal per gram. Contoh 2.000 kkal/hari menghasilkan 1.000 kkal dari karbohidrat atau 250 g karbohidrat/hari.</p><p class="small muted">Ini adalah contoh hitung pada materi, bukan rekomendasi kebutuhan kalori individual.</p></div></details>
+ <details class="details"><summary>Hipoglikemia ringan vs berat (ringkasan slide)</summary><div class="detailbody"><ul class="list"><li><strong>Hipoglikemia ringan:</strong> slide menampilkan glukosa &lt;70 mg/dL, pemberian glukosa oral sesuai berat badan, lalu pemeriksaan ulang 15 menit kemudian.</li><li><strong>Hipoglikemia berat dengan penurunan kesadaran:</strong> slide menampilkan bolus D10% 5 mL/kgBB dan pemeriksaan ulang glukosa 15 menit kemudian.</li></ul><div class="callout warn">Pada kondisi nyata, pasien dengan penurunan kesadaran adalah keadaan darurat. Jangan memberikan makanan/minuman melalui mulut pada pasien yang tidak sadar; ikuti protokol kegawatdaruratan setempat.</div></div></details>
+</section>
+
+<section class="section" id="complications" data-search="komplikasi KAD hipoglikemia retinopati nefropati neuropati makrovaskular autoimun">
+ <div class="sectionhead"><div><div class="eyebrow">07 · Komplikasi</div><h2>Komplikasi DM tipe 1</h2></div></div>
+ <div class="grid three">
+  <article class="card"><span class="badge danger">Jangka pendek</span><h3>KAD</h3><p>Hiperglikemia, ketosis, dan asidosis; dapat disertai dehidrasi serta perubahan kesadaran.</p></article>
+  <article class="card"><span class="badge warn">Jangka pendek</span><h3>Hipoglikemia</h3><p>Glukosa darah rendah; manifestasi dapat menjadi berat hingga penurunan kesadaran.</p></article>
+  <article class="card"><span class="badge">Jangka panjang</span><h3>Mikrovaskular</h3><p>Retinopati, nefropati, dan neuropati.</p></article>
+  <article class="card"><span class="badge">Jangka panjang</span><h3>Makrovaskular</h3><p>PPT mencantumkan hipertensi serta penyakit pembuluh darah koroner dan serebrovaskular.</p></article>
+  <article class="card"><span class="badge">Komorbiditas</span><h3>Autoimun</h3><p>Materi juga menyinggung penyakit autoimun lain.</p></article>
+ </div>
+</section>
+
+<section class="section" id="recall" data-search="active recall pertanyaan latihan">
+ <div class="sectionhead"><div><div class="eyebrow">08 · Retrieval practice</div><h2>Active recall</h2></div><span class="badge">Coba jawab sebelum membuka</span></div>
+ <details class="details"><summary>1. Apa empat gejala klasik DM tipe 1?</summary><div class="detailbody">Poliuria, polidipsia, polifagia, dan penurunan berat badan.</div></details>
+ <details class="details"><summary>2. Mengapa defisiensi insulin menyebabkan hiperglikemia?</summary><div class="detailbody">Ambilan glukosa oleh jaringan menurun, sementara glikogenolisis dan glukoneogenesis hati meningkat.</div></details>
+ <details class="details"><summary>3. Tiga komponen utama kriteria KAD pada PPT?</summary><div class="detailbody">Hiperglikemia, asidosis (pH/HCO₃⁻), serta ketonemia/ketonuria.</div></details>
+ <details class="details"><summary>4. Apa fungsi insulin pada metabolisme lemak?</summary><div class="detailbody">Meningkatkan lipogenesis/penyimpanan lemak dan menghambat lipolisis.</div></details>
+ <details class="details"><summary>5. Sebutkan lima pilar tata laksana DM tipe 1.</summary><div class="detailbody">Insulin, pengaturan makan, olahraga, pemantauan mandiri, dan edukasi.</div></details>
+ <details class="details"><summary>6. Mengapa keton dan kalium penting pada kasus KAD?</summary><div class="detailbody">Keton mendukung adanya ketosis; kalium merupakan elektrolit penting yang harus dievaluasi dan dimonitor selama penanganan. Kasus dalam PPT menunjukkan kalium 3,0 mmol/L.</div></details>
+</section>
+
+<section class="section" id="quiz" data-search="quiz soal pilihan ganda ujian">
+ <div class="sectionhead"><div><div class="eyebrow">09 · Exam practice</div><h2>Mini quiz</h2></div><span class="badge">6 soal · A–E</span></div>
+ <p class="muted">Soal dibuat dari konsep dalam PPT, dengan format campuran: mekanisme, pengenalan pola, dan interpretasi data. Pilih satu jawaban terbaik.</p>
+ <div class="statrow"><div class="stat"><strong id="score">0/6</strong><span class="small muted">Jawaban benar</span></div><div class="stat"><strong id="answered">0/6</strong><span class="small muted">Sudah dijawab</span></div></div>
+ <div id="quizContainer"></div>
+ <div class="quizcontrols"><button class="primary" id="resetQuiz">Ulangi quiz</button><button class="ghost" id="revealAll">Tampilkan semua pembahasan</button></div>
+</section>
+
+<section class="section" id="quick" data-search="quick review 5 menit ringkasan cepat">
+ <div class="sectionhead"><div><div class="eyebrow">10 · Final pass</div><h2>⚡ If you only have 5 minutes</h2></div></div>
+ <div class="card">
+  <ul class="list">
+   <li><strong>DM tipe 1:</strong> kerusakan sel β → insulin berkurang/terhenti.</li>
+   <li><strong>Gejala klasik:</strong> poliuria, polidipsia, polifagia, berat badan turun.</li>
+   <li><strong>Diagnosis DM dalam PPT:</strong> gejala/krisis + glukosa ≥200; puasa ≥126; 2 jam TTGO ≥200 mg/dL; HbA1c sekitar 6,5% sesuai pedoman.</li>
+   <li><strong>KAD:</strong> hiperglikemia + ketonemia/ketonuria + asidosis; cari dehidrasi, muntah, napas Kussmaul, dan perubahan kesadaran.</li>
+   <li><strong>Lima pilar:</strong> insulin, makan, olahraga, pemantauan, edukasi.</li>
+   <li><strong>Komplikasi akut:</strong> KAD dan hipoglikemia; komplikasi jangka panjang termasuk retinopati, nefropati, dan neuropati.</li>
+  </ul>
+ </div>
+ <div class="callout good"><strong>Exam strategy:</strong> jika vignette menunjukkan gejala klasik DM disertai muntah, dehidrasi, perubahan kesadaran atau napas Kussmaul, jangan berhenti pada diagnosis DM—periksa kemungkinan KAD melalui glukosa, keton, pH/bikarbonat, dan elektrolit.</div>
+</section>
+<div class="footer">Dibuat dari materi kuliah “DM tipe 1” yang diberikan. Untuk pembelajaran; bukan pengganti pedoman klinis atau supervisi tenaga kesehatan.</div>
+</main>
+</div>
+<button class="iconbtn backtop" id="backtop" aria-label="Kembali ke atas">↑</button>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const root=document.documentElement;
+$('#themeBtn').addEventListener('click',()=>{const dark=root.getAttribute('data-theme')!=='dark';root.setAttribute('data-theme',dark?'dark':'light');$('#themeBtn').textContent=dark?'☀':'☾';});
+$('#printBtn').addEventListener('click',()=>window.print());
+const progressChecks=$$('[data-progress]');
+function updateProgress(){const n=progressChecks.filter(x=>x.checked).length;$('#doneCount').textContent=n;$('#totalCount').textContent=progressChecks.length;$('#miniBar').style.width=(n/progressChecks.length*100)+'%'}
+progressChecks.forEach(x=>x.addEventListener('change',updateProgress));updateProgress();
+function scrollProgress(){const max=document.documentElement.scrollHeight-innerHeight;$('#progressbar').style.width=(max>0?scrollY/max*100:0)+'%';$('#backtop').classList.toggle('show',scrollY>500)}
+addEventListener('scroll',scrollProgress);scrollProgress();
+$('#backtop').addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const sections=$$('main section[id]');
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){$$('.navlink').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}}),{rootMargin:'-20% 0px -65% 0px'});
+sections.forEach(s=>observer.observe(s));
+$('#search').addEventListener('input',e=>{const q=e.target.value.trim().toLowerCase();sections.forEach(s=>{const match=!q||(s.innerText+' '+(s.dataset.search||'')).toLowerCase().includes(q);s.classList.toggle('hidden',!match)});});
+const questions=[
+{topic:'Fisiologi',q:'Apa efek metabolik yang paling sesuai dengan kerja insulin?',opts:['Meningkatkan lipolisis dan glukoneogenesis','Meningkatkan ambilan glukosa serta sintesis glikogen','Menghambat penyimpanan protein dan energi','Meningkatkan produksi keton secara langsung','Menghambat ambilan glukosa oleh jaringan perifer'],a:1,why:'Insulin meningkatkan ambilan glukosa, sintesis glikogen dan penyimpanan energi; insulin juga menghambat glukoneogenesis serta lipolisis.',wrong:['Insulin justru menghambat lipolisis dan glukoneogenesis.','Benar: ini sesuai fungsi insulin pada PPT.','Insulin mendukung sintesis protein dan penyimpanan energi.','Pembentukan keton meningkat pada keadaan kekurangan insulin.','Insulin meningkatkan, bukan menghambat, ambilan glukosa.'],pearl:'Ingat efek insulin sebagai hormon penyimpanan energi.'},
+{topic:'Patogenesis',q:'Kerusakan sel β pankreas pada DM tipe 1 terutama menyebabkan…',opts:['Peningkatan sekresi insulin yang menetap','Penurunan atau terhentinya produksi insulin','Peningkatan sekresi somatostatin sebagai satu-satunya kelainan','Penurunan glukagon sebagai mekanisme utama','Peningkatan sensitivitas jaringan terhadap insulin'],a:1,why:'PPT menjelaskan bahwa kerusakan sel β, melalui proses autoimun atau idiopatik, menurunkan atau menghentikan produksi insulin.',wrong:['Berlawanan dengan mekanisme utama pada DM tipe 1.','Benar: ini perubahan kunci yang memicu gangguan metabolisme.','Tidak dinyatakan sebagai mekanisme utama dalam materi.','Bukan mekanisme utama yang dijelaskan pada slide.','Defisiensi insulin, bukan peningkatan sensitivitas, menjadi masalah pokok.'],pearl:'Sel β adalah sumber insulin.'},
+{topic:'Diagnosis',q:'Seorang anak mengalami poliuria, polidipsia, dan penurunan berat badan. Glukosa plasma sewaktu 238 mg/dL. Berdasarkan kriteria pada PPT, interpretasi yang paling tepat adalah…',opts:['Belum memenuhi kriteria glukosa karena harus ≥300 mg/dL','Memenuhi ambang glukosa untuk diabetes bila gejala klasik ada','Hanya dapat didiagnosis dengan TTGO','Menunjukkan hipoglikemia berat','Diagnosis ditentukan oleh kadar kalium saja'],a:1,why:'PPT mencantumkan gejala klasik atau krisis hiperglikemik dengan glukosa plasma ≥200 mg/dL sebagai salah satu kriteria diagnosis.',wrong:['Ambang dalam PPT adalah ≥200 mg/dL pada konteks gejala klasik/krisis.','Benar: gejala klasik disertai glukosa 238 mg/dL memenuhi kriteria tersebut.','TTGO bukan satu-satunya cara diagnosis.','238 mg/dL adalah hiperglikemia, bukan hipoglikemia.','Kalium tidak menjadi kriteria diagnosis DM dalam daftar tersebut.'],pearl:'Cocokkan angka dengan konteks pemeriksaan dan gejala.'},
+{topic:'Interpretasi data',q:'Pada kasus di PPT: glukosa 242 mg/dL, keton darah 6,1 mmol/L, pH 7,255, dan HCO₃⁻ 4,7 mmol/L. Kesimpulan yang paling sesuai adalah…',opts:['Hipoglikemia tanpa gangguan asam-basa','Hiperglikemia tanpa ketosis','KAD dengan asidosis metabolik dan ketonemia','Alkalosis metabolik terkompensasi','Hasil sepenuhnya normal untuk anak'],a:2,why:'Kombinasi hiperglikemia, ketonemia tinggi, pH rendah dan bikarbonat sangat rendah mendukung ketoasidosis diabetikum.',wrong:['Glukosa justru tinggi dan terdapat asidosis/ketonemia.','Keton darah 6,1 mmol/L menunjukkan ketonemia, bukan ketiadaan ketosis.','Benar: seluruh temuan mendukung KAD.','pH dan HCO₃⁻ menunjukkan asidosis, bukan alkalosis.','Nilai tersebut tidak normal dan memerlukan penanganan segera.'],pearl:'Baca glukosa, keton, pH/HCO₃⁻ bersama-sama.'},
+{topic:'Komplikasi',q:'Temuan klinis yang paling mendukung kemungkinan KAD pada pasien dengan gejala DM adalah…',opts:['Napas Kussmaul disertai muntah dan dehidrasi','Bradikardia tanpa keluhan lain','Peningkatan nafsu makan tanpa gejala lain','Ruam lokal tanpa gejala sistemik','Berat badan stabil dengan kondisi umum baik'],a:0,why:'PPT mencantumkan muntah, dehidrasi, perubahan kesadaran, dan pola napas Kussmaul sebagai manifestasi klinis KAD.',wrong:['Benar: kumpulan temuan tersebut sangat mengarah pada KAD.','Bukan pola manifestasi khas yang ditekankan dalam materi.','Polifagia merupakan gejala klasik DM, tetapi tidak spesifik untuk KAD.','Tidak cukup untuk mengarah pada KAD.','Tidak sesuai dengan gambaran klinis KAD yang dijelaskan.'],pearl:'Pada pasien DM yang sakit akut, cari tanda dehidrasi dan asidosis.'},
+{topic:'Tatalaksana',q:'Manakah yang termasuk lima pilar tata laksana DM tipe 1 menurut PPT?',opts:['Antibiotik, insulin, operasi, diet, dan tirah baring','Insulin, pengaturan makan, olahraga, pemantauan mandiri, edukasi','Insulin, pembatasan cairan, antibiotik, dialisis, edukasi','Diet saja, olahraga, vitamin, antibiotik, dan observasi','Pemeriksaan HbA1c, CT scan, insulin, operasi, dan edukasi'],a:1,why:'PPT mencantumkan insulin, pengaturan makan, olahraga, pemantauan mandiri, dan edukasi.',wrong:['Tiga intervensi tersebut bukan bagian dari lima pilar pada slide.','Benar: kelima komponen sesuai materi.','Pembatasan cairan, antibiotik, dan dialisis bukan pilar rutin yang dicantumkan.','Diet dan olahraga saja tidak mencakup seluruh pilar.','HbA1c adalah pemeriksaan; CT scan dan operasi bukan pilar rutin.'],pearl:'Hafalkan lima pilar sebagai satu rangkaian.'}
+];
+let answers={};let revealAll=false;
+function renderQuiz(){const container=$('#quizContainer');container.innerHTML='';questions.forEach((q,i)=>{const card=document.createElement('article');card.className='quizcard';card.id='question'+i;const meta=document.createElement('div');meta.className='qmeta';meta.innerHTML=`<span class="badge">Soal ${i+1} dari ${questions.length}</span><span class="badge">${q.topic}</span>`;card.append(meta);const stem=document.createElement('h3');stem.textContent=q.q;card.append(stem);const opts=document.createElement('div');opts.className='options';q.opts.forEach((op,j)=>{const b=document.createElement('button');b.className='option';b.innerHTML=`<span class="letter">${'ABCDE'[j]}.</span><span></span>`;b.lastElementChild.textContent=op;if(answers[i]===j)b.classList.add('selected');if(answers[i]!==undefined){if(j===q.a)b.classList.add('correct');else if(j===answers[i])b.classList.add('incorrect')}b.addEventListener('click',()=>{answers[i]=j;renderQuiz()});opts.append(b)});card.append(opts);const fb=document.createElement('div');fb.className='feedback';fb.hidden=answers[i]===undefined&&!revealAll; if(answers[i]!==undefined||revealAll){const ok=answers[i]===q.a;fb.innerHTML=`<strong>${answers[i]===undefined?'Pembahasan':ok?'✅ Benar':'❌ Belum tepat'}${answers[i]===undefined?'':': '+ 'ABCDE'[q.a]+'. '+q.opts[q.a]}</strong><p><strong>Penjelasan:</strong> ${q.why}</p><details class="details"><summary>Mengapa opsi lain salah?</summary><div class="detailbody"><ul class="list">${q.wrong.map((w,j)=>`<li><strong>${'ABCDE'[j]}.</strong> ${w}</li>`).join('')}</ul></div></details><p><strong>Exam pearl:</strong> ${q.pearl}</p>`}card.append(fb);container.append(card)});const correct=questions.reduce((n,q,i)=>n+(answers[i]===q.a?1:0),0);$('#score').textContent=correct+'/'+questions.length;$('#answered').textContent=Object.keys(answers).length+'/'+questions.length}
+$('#resetQuiz').addEventListener('click',()=>{answers={};revealAll=false;renderQuiz();$('#quiz').scrollIntoView({behavior:'smooth'})});
+$('#revealAll').addEventListener('click',()=>{revealAll=!revealAll;renderQuiz();$('#revealAll').textContent=revealAll?'Sembunyikan pembahasan yang belum dijawab':'Tampilkan semua pembahasan'});
+renderQuiz();
+</script>
+</body>
+</html>
